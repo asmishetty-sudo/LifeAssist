@@ -40,7 +40,12 @@ export default function MessagesPage() {
   };
 
   handleMarkMessagesRead();
-    socket.current = io(`${process.env.NEXT_PUBLIC_BACKEND}`);
+    socket.current = io(`${process.env.NEXT_PUBLIC_BACKEND}`, {
+  transports: ["websocket"],   // stops polling spam
+  reconnection: true,
+  reconnectionAttempts: 10,    // LIMIT retries
+  reconnectionDelay: 2000,     // wait 2s between tries
+});
     socket.current.on("connect", () => {
       console.log("Socket connected:", socket.current.id);
     });
