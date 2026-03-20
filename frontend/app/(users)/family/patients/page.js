@@ -123,7 +123,7 @@ export default function PatientsPage() {
       {/* Modal */}
       {showModal && (
         <div className="fixed inset-0  bg-black/40 flex items-center justify-center">
-          <div className="bg-white w-full mt-16 max-w-lg p-6 rounded-xl shadow-lg relative">
+          <div className="bg-white w-full mt-18 max-w-lg p-6 rounded-xl shadow-lg relative">
             <button
               onClick={() => setShowModal(false)}
               className="absolute top-4 right-4 text-gray-500 hover:text-red-500"
@@ -135,7 +135,7 @@ export default function PatientsPage() {
               Add New Patient
             </h2>
 
-            <div className="space-y-4">
+            <div className="space-y-2">
               <div className="flex gap-3">
               <input
                 name="name"
