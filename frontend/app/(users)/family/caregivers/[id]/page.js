@@ -35,7 +35,7 @@ export default function CaregiverProfilePage() {
         <Image
           src={
             caregiver?.photo
-              ? `${process.env.NEXT_PUBLIC_BACKEND}/${caregiver.photo}`
+              ? `${caregiver.photo}`
               : "/default-avatar.png"
           }
           alt={caregiver?.fullName || "Caregiver"}
