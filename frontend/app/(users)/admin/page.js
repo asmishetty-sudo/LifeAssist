@@ -189,7 +189,7 @@ export default function AdminDashboard() {
                 <Image
                   src={
                     c.photo
-                      ? `${process.env.NEXT_PUBLIC_BACKEND}/${c.photo}`
+                      ? `${c.photo}`
                       : "/default-avatar.png"
                   }
                   alt={c.fullName}
