@@ -33,7 +33,11 @@ export default function MessagesPage() {
 
   // Initialize socket
   useEffect(() => {
-    if (!user || !socket.current) return;
+    if (!user) return;
+    if (!socket.current) {
+  console.error("Socket not initialized");
+  return;
+}
     const handleMarkMessagesRead = () => {
     markMessagesRead();
   };
