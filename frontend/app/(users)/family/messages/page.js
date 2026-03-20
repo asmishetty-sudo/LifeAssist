@@ -45,6 +45,7 @@ export default function MessagesPage() {
   reconnection: true,
   reconnectionAttempts: 10,    // LIMIT retries
   reconnectionDelay: 2000,     // wait 2s between tries
+      timeout: 5000,
 });
     socket.current.on("connect", () => {
       console.log("Socket connected:", socket.current.id);
