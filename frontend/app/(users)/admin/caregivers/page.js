@@ -187,7 +187,7 @@ export default function CaregiversPage() {
             message={`Are you sure you want to ${
               confirmAction === "review"
                 ? "move this caregiver to review"
-                : confirmAction === "verify"
+                : confirmAction === "approved"
                 ? "verify this caregiver"
                 : "reject this caregiver"
             }?`}
