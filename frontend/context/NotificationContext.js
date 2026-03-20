@@ -75,7 +75,13 @@ const socket = useRef(null);
 
     if (!user) return;
 
-    socket.current = io(process.env.NEXT_PUBLIC_BACKEND);
+    socket.current = io(process.env.NEXT_PUBLIC_BACKEND, {
+  transports: ["websocket"],
+  reconnection: true,
+  reconnectionAttempts: 10,
+  reconnectionDelay: 2000,
+  timeout: 5000,
+});
 
 socket.current.emit("join_user", user.userId);
 
@@ -133,7 +139,6 @@ socket.current.on("notification", (data) => {
 
   // ---------------- MARK ALL MESSAGE NOTIFICATIONS ----------------
   const markMessagesRead = async () => {
-    fetchNotifications();
     const ids = notifications
       .filter(n => !n.read && n.type === "message")
       .map(n => n._id);
