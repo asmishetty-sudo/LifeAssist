@@ -262,7 +262,7 @@ export default function CaregiverDashboard() {
         <Image
           src={
             profile?.photo
-              ? `${process.env.NEXT_PUBLIC_BACKEND}/${profile.photo}`
+              ? `${profile.photo}`
               : "/default-avatar.png"
           }
           alt="Profile"
