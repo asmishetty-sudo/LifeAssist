@@ -39,14 +39,6 @@ export default function MessagesPage() {
   };
 
   handleMarkMessagesRead();
-    socket.current = io(`${process.env.NEXT_PUBLIC_BACKEND}`, {
-  transports: ["websocket"],   // stops polling spam
-  reconnection: true,
-  reconnectionAttempts: 10,    // LIMIT retries
-  reconnectionDelay: 2000,     // wait 2s between tries
-      timeout: 5000,
-      autoConnect: true,
-});
     socket.current.on("connect", () => {
       console.log("Socket connected:", socket.current.id);
     });
@@ -108,9 +100,12 @@ export default function MessagesPage() {
       }
     });
 
-    return () => {
-      if (socket.current) socket.current.disconnect();
-    };
+   return () => {
+  if (socket.current) {
+    socket.current.off("receive_message");
+    socket.current.off("messages_delivered");
+    socket.current.off("messages_seen");
+  }
   }, [user, markMessagesRead]);
 
   useEffect(() => {
