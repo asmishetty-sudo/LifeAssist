@@ -15,7 +15,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "your-backend-url.com",
+        hostname: "lifeassist-backend.onrender.com",
         pathname: "/uploads/**",
       },
     ],
