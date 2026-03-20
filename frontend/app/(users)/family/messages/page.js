@@ -114,7 +114,7 @@ export default function MessagesPage() {
       socket.current.off("messages_seen");
     }
   };
-  }, [user, markMessagesRead]);
+  }, [user]);
 
   useEffect(() => {
   if (!token) return;
