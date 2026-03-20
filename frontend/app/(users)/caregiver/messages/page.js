@@ -109,7 +109,7 @@ export default function MessagesPage() {
       socket.current.off("messages_seen");
     }
   };
-  }, [profile, markMessagesRead]);
+  }, [profile]);
 
 
   useEffect(() => {
