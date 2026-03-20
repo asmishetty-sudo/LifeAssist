@@ -100,12 +100,14 @@ export default function MessagesPage() {
       }
     });
 
-   return () => {
-  if (socket.current) {
-    socket.current.off("receive_message");
-    socket.current.off("messages_delivered");
-    socket.current.off("messages_seen");
-  }
+  return () => {
+    if (socket.current) {
+      socket.current.off("connect");
+      socket.current.off("receive_message");
+      socket.current.off("messages_delivered");
+      socket.current.off("messages_seen");
+    }
+  };
   }, [user, markMessagesRead]);
 
   useEffect(() => {
