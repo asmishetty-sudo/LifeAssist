@@ -60,7 +60,10 @@ export default function MessagesPage() {
         msg.chat === activeChatRef.current._id &&
         msg.sender !== profile.id
       ) {
-        socket.current.emit("seen_messages", activeChatRef.current._id);
+        socket.current.emit("seen_messages", {
+  chatId: activeChatRef.current._id,
+  userId: user.userId,
+});
         markMessagesRead();
       } else if (msg.sender !== profile.id) {
         // Increment unread count for chats not open
