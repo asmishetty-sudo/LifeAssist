@@ -9,14 +9,13 @@ import io from "socket.io-client";
 export default function MessagesPage() {
   const { profile, loading } = useCaregiver();
   const { token } = useUser();
-  const { markMessagesRead } = useNotifications();
+  const { markMessagesRead ,socket } = useNotifications();
   const [chats, setChats] = useState([]);
   const [activeChat, setActiveChat] = useState(null);
   const [messages, setMessages] = useState([]);
   const [text, setText] = useState("");
   const [showDownArrow, setShowDownArrow] = useState(false);
 
-  const socket = useRef(null);
   const messagesEndRef = useRef(null);
   const messagesContainerRef = useRef(null);
   const activeChatRef = useRef(null);
@@ -34,19 +33,12 @@ export default function MessagesPage() {
   // Initialize socket
   useEffect(() => {
     if (!profile) return;
+  if (!socket.current) return;
     const handleMarkMessagesRead = () => {
       markMessagesRead();
     };
 
     handleMarkMessagesRead();
-    socket.current = io(`${process.env.NEXT_PUBLIC_BACKEND}`, {
-  transports: ["websocket"],   // stops polling spam
-  reconnection: true,
-  reconnectionAttempts: 10,    // LIMIT retries
-  reconnectionDelay: 2000,     // wait 2s between tries
-      timeout: 5000,
-      autoConnect: true,
-});
 
     socket.current.on("connect", () => {
       console.log("Socket connected:", socket.current.id);
@@ -64,7 +56,7 @@ export default function MessagesPage() {
       ) {
         socket.current.emit("seen_messages", {
   chatId: activeChatRef.current._id,
-  userId: user.userId,
+  userId: profile.id,
 });
         markMessagesRead();
       } else if (msg.sender !== profile.id) {
@@ -110,8 +102,13 @@ export default function MessagesPage() {
     });
 
     return () => {
-      if (socket.current) socket.current.disconnect();
-    };
+    if (socket.current) {
+      socket.current.off("connect");
+      socket.current.off("receive_message");
+      socket.current.off("messages_delivered");
+      socket.current.off("messages_seen");
+    }
+  };
   }, [profile, markMessagesRead]);
 
 
