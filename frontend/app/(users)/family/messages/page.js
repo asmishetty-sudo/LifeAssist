@@ -33,7 +33,7 @@ export default function MessagesPage() {
 
   // Initialize socket
   useEffect(() => {
-    if (!user) return;
+    if (!user || !socket.current) return;
     const handleMarkMessagesRead = () => {
     markMessagesRead();
   };
