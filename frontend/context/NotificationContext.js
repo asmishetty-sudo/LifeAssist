@@ -272,6 +272,7 @@ return () => {
       value={{
         notifications,
         unread,
+        socket,
         messageUnread,
         bookingUnread,
         feedbackUnread,
