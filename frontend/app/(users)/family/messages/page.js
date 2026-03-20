@@ -10,14 +10,13 @@ import io from "socket.io-client";
 
 export default function MessagesPage() {
   const { user, loading, token } = useUser();
-  const { markMessagesRead } = useNotifications();
+  const { markMessagesRead,socket } = useNotifications();
   const [chats, setChats] = useState([]);
   const [activeChat, setActiveChat] = useState(null);
   const [messages, setMessages] = useState([]);
   const [text, setText] = useState("");
   const [showDownArrow, setShowDownArrow] = useState(false);
 
-  const socket = useRef(null);
   const messagesEndRef = useRef(null);
   const messagesContainerRef = useRef(null);
   const activeChatRef = useRef(null);
