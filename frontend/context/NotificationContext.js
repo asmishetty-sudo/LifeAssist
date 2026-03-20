@@ -118,6 +118,7 @@ return () => {
     socket.current.disconnect();
     socket.current = null; //prevents multiple sockets
   }
+}
   },  [user?.userId]);
 
 
