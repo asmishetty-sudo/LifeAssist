@@ -112,8 +112,12 @@ socket.current.on("notification", (data) => {
 
     });
 
-    return () => socket.current?.disconnect();
-
+    
+return () => {
+  if (socket.current) {
+    socket.current.disconnect();
+    socket.current = null; //prevents multiple sockets
+  }
   },  [user?.userId]);
 
 
