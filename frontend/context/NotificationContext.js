@@ -82,9 +82,12 @@ const socket = useRef(null);
   reconnectionDelay: 2000,
   timeout: 5000,
 });
-
-socket.current.emit("join_user", user.userId);
-
+socket.current.on("connect", () => {
+  socket.current.emit("join_user", user.userId);
+});
+socket.current.on("connect_error", (err) => {
+  console.log("Socket error:", err.message);
+});
 socket.current.on("notification", (data) => {
 
       setNotifications(prev => [data, ...prev]);
