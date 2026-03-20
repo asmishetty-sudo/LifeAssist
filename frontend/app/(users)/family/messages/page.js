@@ -37,7 +37,9 @@ export default function MessagesPage() {
     if (!socket.current) {
   console.error("Socket not initialized");
   return;
-}
+}else {
+      console.log("Socket initialized");
+    }
     const handleMarkMessagesRead = () => {
     markMessagesRead();
   };
