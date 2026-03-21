@@ -138,7 +138,7 @@ export default function NotificationBell() {
                   key={n._id}
                   onClick={() => handleNotificationClick(n)}
                   className="
-                    p-2 sm:p-3 sm:text-base text-sm border-b text-sm cursor-pointer
+                    p-2 sm:p-3 sm:text-sm text-xs border-b cursor-pointer
                     hover:bg-gray-100
                     bg-blue-50 font-medium
                   "
@@ -148,7 +148,7 @@ export default function NotificationBell() {
               ))}
 
             {unread <= 0 && (
-              <div className="p-2 sm:p-3 text-sm text-gray-500">
+              <div className="p-2 sm:p-3 sm:text-sm text-xs text-gray-500">
                 No notifications
               </div>
             )}
