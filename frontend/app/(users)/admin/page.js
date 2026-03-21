@@ -38,9 +38,11 @@ export default function AdminDashboard() {
     .filter((b) => b.paymentStatus === "paid")
     .reduce((acc, b) => acc + (b.finalAmount || b.estimatedAmount), 0);
 
-  const avgRating =
-    caregivers.reduce((acc, c) => acc + (c.rating || 0), 0) /
-    (caregivers.length || 1);
+const validCaregivers = caregivers.filter((c) => c.rating > 0);
+
+const avgRating =
+  validCaregivers.reduce((acc, c) => acc + c.rating, 0) /
+  (validCaregivers.length || 1);
 
   // 🔹 BOOKING STATUS PIE
   const bookingStatusData = {
@@ -93,8 +95,9 @@ export default function AdminDashboard() {
 
   // 🔹 TOP CAREGIVERS
   const topCaregivers = [...caregivers]
-    .sort((a, b) => (b.rating || 0) - (a.rating || 0))
-    .slice(0, 5);
+  .filter((c) => c.verified === true && c.nooffeedback > 14)
+  .sort((a, b) => (b.rating || 0) - (a.rating || 0))
+  .slice(0, 5);
 
   return (
     <div className="sm:p-6 space-y-8">
