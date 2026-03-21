@@ -345,7 +345,7 @@ export default function CaregiverSetup() {
           />
         </div>
 
-        <div className="space-y-2 w-1/2">
+        <div className="space-y-2 sm:w-1/2">
           <label className="block font-medium ">Upload Profile Photo</label>
 
           <div className="relative border-2 border-dashed border-blue-300 rounded-xl p-6 bg-gradient-to-br from-green-50 via-blue-50 to-white hover:border-green-400 transition">
