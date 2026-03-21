@@ -108,7 +108,7 @@ export default function AdminComplaintsPage() {
                   <strong>From:</strong> {user?.name || "Unknown User"}
                 </p>
                 <p>
-                  <strong>ComplaintId:</strong> {complaint._id.toUpperCase()}
+                  <strong>ComplaintId:</strong> <span className="break-all">{complaint._id.toUpperCase()}</span>
                 </p>
                 {activeTab === "caregiver" && caregiver && (
                   <p>
