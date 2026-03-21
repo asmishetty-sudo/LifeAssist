@@ -198,7 +198,7 @@ const avgRating =
                   alt={c.fullName}
                   width={32}
                   height={32}
-                  className="rounded-full object-cover border"
+                  className="w-8 h-8 rounded-full object-cover border"
                 />
                 <span className="font-medium text-gray-700">{c.fullName}</span>
               </div>
