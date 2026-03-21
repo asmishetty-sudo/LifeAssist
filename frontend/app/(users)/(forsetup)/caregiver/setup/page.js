@@ -142,7 +142,7 @@ export default function CaregiverSetup() {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 via-blue-50 to-white">
       <form
         onSubmit={handleSubmit}
-        className="bg-white m-2 p-8 rounded-xl shadow-lg w-full max-w-3xl space-y-4 border border-blue-100"
+        className="bg-white m-2 p-4 sm:p-8 rounded-xl shadow-lg w-full max-w-3xl space-y-3 sm:space-y-4 border border-blue-100"
       >
         <h2 className="text-xl sm:text-2xl font-bold text-center text-blue-700">
           Caregiver Background Details
