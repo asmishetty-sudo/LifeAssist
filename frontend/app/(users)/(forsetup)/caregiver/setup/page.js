@@ -186,9 +186,9 @@ export default function CaregiverSetup() {
           />
         </div>
 
-        <div className="flex gap-6">
+        <div className="flex gap-2 sm:gap-6">
           <label className="font-medium  block mb-2">Gender:</label>
-          <label className="flex items-center gap-2 cursor-pointer">
+          <label className="flex items-center gap-2 text-sm sm:text-base cursor-pointer">
             <input
               type="radio"
               name="gender"
@@ -200,7 +200,7 @@ export default function CaregiverSetup() {
             Male
           </label>
 
-          <label className="flex items-center gap-2 cursor-pointer">
+          <label className="flex items-center gap-2 text-sm sm:text-base cursor-pointer">
             <input
               type="radio"
               name="gender"
@@ -212,7 +212,7 @@ export default function CaregiverSetup() {
             Female
           </label>
 
-          <label className="flex items-center gap-2 cursor-pointer">
+          <label className="flex items-center gap-2 text-sm sm:text-base cursor-pointer">
             <input
               type="radio"
               name="gender"
@@ -283,7 +283,7 @@ export default function CaregiverSetup() {
             ].map((qualification) => (
               <label
                 key={qualification}
-                className="flex items-center gap-2 cursor-pointer bg-white p-2 rounded-lg shadow-sm hover:bg-green-50 transition"
+                className="flex items-center gap-2 cursor-pointer text-sm sm:text-base bg-white p-2 rounded-lg shadow-sm hover:bg-green-50 transition"
               >
                 <input
                   type="checkbox"
@@ -308,7 +308,7 @@ export default function CaregiverSetup() {
             {services.map((service) => (
               <label
                 key={service._id}
-                className="flex items-center gap-2 cursor-pointer bg-white p-2 rounded-lg shadow-sm hover:bg-blue-50 transition"
+                className="flex items-center gap-2 cursor-pointer bg-white p-2 text-sm sm:text-base rounded-lg shadow-sm hover:bg-blue-50 transition"
               >
                 <input
                   type="checkbox"
