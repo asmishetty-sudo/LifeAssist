@@ -80,7 +80,7 @@ export default function RegisterPage() {
 
         <button
           disabled={loading}
-          className="bg-blue-600 text-white p-2 rounded"
+          className="bg-blue-600 text-white p-2 rounded disabled:opacity-50" 
           type="submit"
         >
           {loading ? "Submiting..." : "Submit"}
