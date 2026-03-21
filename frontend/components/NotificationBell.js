@@ -109,12 +109,12 @@ export default function NotificationBell() {
         <div
           className="
           absolute right-0 mt-3 w-40 sm:w-72
-          bg-white text-black shadow-xl rounded-xl
+          bg-white text-black shadow-xl rounded-md sm:rounded-xl
           border border-gray-200
           z-50
           "
         >
-          <div className="p-3 border-b font-semibold text-gray-700">
+          <div className="p-2 sm:p-3 border-b font-semibold text-gray-700">
             Notifications
           </div>
 
@@ -124,7 +124,7 @@ export default function NotificationBell() {
             {messageUnread > 0 && (
               <div
                 onClick={handleMessagesClick}
-                className="p-3 hover:bg-gray-100 cursor-pointer border-b"
+                className="p-2 sm:p-3 hover:bg-gray-100 cursor-pointer border-b"
               >
                 📩 Messages ({messageUnread})
               </div>
@@ -139,7 +139,7 @@ export default function NotificationBell() {
                   key={n._id}
                   onClick={() => handleNotificationClick(n)}
                   className="
-                    p-3 border-b text-sm cursor-pointer
+                    p-2 sm:p-3 border-b text-sm cursor-pointer
                     hover:bg-gray-100
                     bg-blue-50 font-medium
                   "
@@ -149,7 +149,7 @@ export default function NotificationBell() {
               ))}
 
             {unread <= 0 && (
-              <div className="p-3 text-sm text-gray-500">
+              <div className="p-2 sm:p-3 text-sm text-gray-500">
                 No notifications
               </div>
             )}
