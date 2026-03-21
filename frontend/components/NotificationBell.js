@@ -2,7 +2,7 @@
 
 import { useNotifications } from "@/context/NotificationContext";
 import { useUser } from "@/context/userContext";
-import { Bell,Inbox } from "lucide-react";
+import { Bell,Inbox,Mail } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 
@@ -123,9 +123,9 @@ export default function NotificationBell() {
             {messageUnread > 0 && (
               <div
                 onClick={handleMessagesClick}
-                className="p-2 sm:p-3 hover:bg-gray-100 cursor-pointer border-b flex items-center"
+                className="p-2 sm:p-3 hover:bg-gray-100 cursor-pointer border-b flex items-center gap-2 sm:text-base text-sm"
               >
-                <Inbox className="w-4 h-4 sm:w-5 sm:h-5" /> Messages ({messageUnread})
+                <Mail className="w-4 h-4 sm:w-5 sm:h-5" /> Messages ({messageUnread})
               </div>
             )}
 
@@ -138,7 +138,7 @@ export default function NotificationBell() {
                   key={n._id}
                   onClick={() => handleNotificationClick(n)}
                   className="
-                    p-2 sm:p-3 border-b text-sm cursor-pointer
+                    p-2 sm:p-3 sm:text-base text-sm border-b text-sm cursor-pointer
                     hover:bg-gray-100
                     bg-blue-50 font-medium
                   "
