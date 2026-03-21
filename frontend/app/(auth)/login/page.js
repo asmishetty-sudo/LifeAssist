@@ -70,11 +70,11 @@ const { user, login } = useUser();
         />
 
         <button
-          disabled={loading}
-          className="bg-blue-600 text-white p-2 rounded"
-          type="submit"
-        >
-          Login
+        disabled={loading}
+        className="bg-blue-600 hover:bg-blue-700 active:bg-blue-500 text-white p-2 rounded disabled:opacity-50"
+        type="submit"
+          >
+        {loading ? "Logging in..." : "Login"}
         </button>
         <p className="text-center text-gray-700">No Account? <Link className="text-green-600 hover:underline" href={"/register"}>Register Here</Link></p>
       </form>
