@@ -374,7 +374,7 @@ export default function CaregiverSetup() {
                   alt="Preview"
                   width={128}
                   height={128}
-                  className="rounded-full object-cover border-4 border-green-300 shadow"
+                  className="w-32 h-32 rounded-full object-cover border-4 border-green-300 shadow"
                 />
                 <div className="flex items-center gap-2 text-green-600 font-medium">
                   <Upload size={16} />
