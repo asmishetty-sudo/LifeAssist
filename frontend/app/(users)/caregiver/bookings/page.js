@@ -45,7 +45,7 @@ export default function BookingsPage() {
       const result = await res.json();
 
       if (res.ok) {
-        toast.success(`Booking updated to ${data.status}` || "Booking updated successfully");
+        toast.success(data.status ? `Booking updated to ${data.status}` : "Updated!!");
         init(); // refresh bookings
       } else {
         toast.error(result.message || "Failed to update booking");
