@@ -112,7 +112,7 @@ export default function AdminUsersPage() {
       </div>
 
       {/* 📋 Users Table */}
-      <div className="bg-white shadow rounded-lg overflow-hidden">
+      <div className="bg-white shadow rounded-lg overflow-x-auto">
         <table className="w-full text-left">
           <thead className="bg-gray-100 text-gray-600 text-sm">
             <tr>
