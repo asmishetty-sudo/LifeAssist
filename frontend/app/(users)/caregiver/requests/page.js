@@ -50,7 +50,7 @@ export default function PendingBookingsPage() {
 
       const data = await res.json();
       if (res.ok) {
-        toast.success(data.message);
+        toast.success(`Booking ${newStatus}`);
         init();
         setConfirmTarget(null);
         setConfirmAction("");
