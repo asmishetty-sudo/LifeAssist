@@ -108,7 +108,7 @@ export default function NotificationBell() {
       {open && (
         <div
           className="
-          absolute right-0 mt-3 w-72
+          absolute right-0 mt-3 w-40 sm:w-72
           bg-white text-black shadow-xl rounded-xl
           border border-gray-200
           z-50
