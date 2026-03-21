@@ -283,7 +283,7 @@ export default function CaregiverSetup() {
             ].map((qualification) => (
               <label
                 key={qualification}
-                className="flex items-center gap-2 cursor-pointer text-sm sm:text-base bg-white p-2 rounded-lg shadow-sm hover:bg-green-50 transition"
+                className="flex items-center gap-2 cursor-pointer text-xs sm:text-base bg-white p-2 rounded-lg shadow-sm hover:bg-green-50 transition"
               >
                 <input
                   type="checkbox"
@@ -308,7 +308,7 @@ export default function CaregiverSetup() {
             {services.map((service) => (
               <label
                 key={service._id}
-                className="flex items-center gap-2 cursor-pointer bg-white p-2 text-sm sm:text-base rounded-lg shadow-sm hover:bg-blue-50 transition"
+                className="flex items-center gap-2 cursor-pointer bg-white p-2 text-xs sm:text-base rounded-lg shadow-sm hover:bg-blue-50 transition"
               >
                 <input
                   type="checkbox"
