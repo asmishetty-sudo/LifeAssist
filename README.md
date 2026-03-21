@@ -222,19 +222,6 @@ npm run dev
 
 ---
 
-## 🤝 Contribution
-
-Feel free to fork, contribute, and improve LifeAssist.
-Pull requests are welcome!
-
----
-
-## 📜 License
-
-This project is open-source and available under the MIT License.
-
----
-
 ## 👨‍💻 Author
 
 **Asmi M Shetty**
