@@ -64,10 +64,16 @@ export default function BookingModal({
     // Time calculation
     if (service.priceType === "hourly") {
       const start = new Date(`1970-01-01T${startTime}`);
-      const end = new Date(`1970-01-01T${endTime}`);
-      const hours = (end - start) / (1000 * 60 * 60);
+      let end = new Date(`1970-01-01T${endTime}`);
 
+// If end time is next day (overnight shift)
+     if (end <= start) {
+          end.setDate(end.getDate() + 1);
+      }
+
+     const hours = (end - start) / (1000 * 60 * 60);
       if (hours > 0) total = basePrice * hours;
+      
     } else {
       total = basePrice;
     }
