@@ -6,7 +6,7 @@ import { useAdmin } from "@/context/AdminContext";
 
 export default function PatientProfilePage() {
   const { id } = useParams();
-  const { patients, bookings ,users } = useAdmin();
+  const { patients, bookings , caregivers,users } = useAdmin();
 
   const [activeTab, setActiveTab] = useState("pending");
 
@@ -98,7 +98,7 @@ const user = users.find(u => u._id === patient.userId);
                 </p>
                 <p>
                   <strong>Caregiver:</strong>{" "}
-                  {b.caregiverId || "Unknown"}
+                  {caregivers.find(c => c._id === b.caregiverId)?.fullName || "Unknown"}
                 </p>
                 <p><strong>Status:</strong> {b.status}</p>
                 <p><strong>Payment:</strong> {b.paymentStatus}</p>
