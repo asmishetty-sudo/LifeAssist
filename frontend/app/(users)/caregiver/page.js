@@ -425,9 +425,8 @@ export default function CaregiverDashboard() {
             {/* LEFT */}
             <div className="flex flex-col">
               <p className="font-semibold text-sm sm:text-base">
-                {b.serviceId}
+                {b.serviceId.name}
               </p>
-
               <p className="text-xs sm:text-sm text-gray-500">
                 {new Date(b.startDate).toLocaleDateString()}
               </p>
