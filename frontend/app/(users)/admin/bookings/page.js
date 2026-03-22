@@ -139,7 +139,7 @@ export default function BookingsPage() {
                       <Star size={16} className="text-yellow-400" /> Feedback
                     </h3>
                     {bFeedback.map((f) => {
-                      const fbUser = getUser(f.userId);
+                      const fbUser = getUser(b.userId);
                       const fbCaregiver = getCaregiver(f.caregiverId);
                       return (
                         <div
