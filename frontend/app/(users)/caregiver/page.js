@@ -90,8 +90,8 @@ export default function CaregiverDashboard() {
     labels: ["Completed", "Pending", "Ongoing", "Cancelled"],
     datasets: [
       {
-        data: [completed,accepted, pending, ongoing, cancelled],
-        backgroundColor: ["#22c55e","#7e22ce", "#eab308", "#3b82f6", "#ef4444"],
+        data: [completed,accepted, pending, ongoing, cancelled,rejected],
+        backgroundColor: ["#22c55e","#7e22ce", "#eab308", "#3b82f6","#f97316", "#ef4444"],
         borderWidth: 0,
       },
     ],
