@@ -147,7 +147,7 @@ export default function BookingsPage() {
                           className="p-2 border rounded-lg bg-white"
                         >
                           <p>
-                            <strong>User:</strong> {fbUser?.name || "Unknown"}
+                            <strong>User:</strong> {fbUser?._id || "Unknown"}
                           </p>
                           <p>
                             <strong>Caregiver:</strong>{" "}
