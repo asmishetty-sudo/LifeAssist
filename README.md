@@ -21,13 +21,16 @@ The platform is built with scalability and real-world usability in mind, support
 ### 2. Caregiver
 
 * Create and manage profile
-* Accept or reject booking requests
+* Accept or reject booking requests (Can't cancel once accepted -only client can cancel)
 * Communicate with clients
 * View earnings and analytics
 
 ### 3. Admin ⚠️
 
 * Full platform control (users, bookings, reports)
+* Add services
+* View user complaints
+* Verify Caregiver profiles
 * **Important:** Admin role cannot be assigned via frontend
   → Must be manually updated in **MongoDB (Atlas/local DB)**
 
@@ -226,5 +229,4 @@ npm run dev
 
 **Asmi M Shetty**
 
----
 
