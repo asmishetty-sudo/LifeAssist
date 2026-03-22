@@ -44,7 +44,7 @@ const user = users.find(u => u._id === patient.userId);
             {patient.age ? `${patient.age} years old` : ""}
           </p>
           <p><strong>Gender:</strong> {patient.gender}</p>
-          <p><strong>Contact:</strong> {patient.econtact || "N/A"}</p>
+          <p><strong>Emergency Contact:</strong> {patient.econtact || "N/A"}</p>
           <p><strong>Email:</strong> {user?.email || "N/A"}</p>
         </div>
       </div>
