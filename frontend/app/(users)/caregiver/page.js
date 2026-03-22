@@ -403,7 +403,68 @@ export default function CaregiverDashboard() {
           </div>
         </div>
       </div>
-      {/* RECENT BOOKINGS */}Z
+      {/* -------------------- RECENT BOOKINGS -------------------- */}
+   <div className="bg-white rounded-xl shadow p-4 sm:p-6">
+  <h3 className="text-blue-700 font-semibold text-lg mb-4">
+    🧾 Recent Bookings
+  </h3>
+
+  {bookings.length === 0 ? (
+    <p className="text-gray-500 text-sm">No bookings yet.</p>
+  ) : (
+    <div className="space-y-3">
+      {bookings
+        .slice()
+        .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+        .slice(0, 5)
+        .map((b) => (
+          <div
+            key={b._id}
+            className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border rounded-lg p-3 hover:bg-gray-50 transition"
+          >
+            {/* LEFT */}
+            <div className="flex flex-col">
+              <p className="font-semibold text-sm sm:text-base">
+                {b.serviceId}
+              </p>
+
+              <p className="text-xs sm:text-sm text-gray-500">
+                {new Date(b.startDate).toLocaleDateString()}
+              </p>
+
+              <p className="text-xs text-gray-400">
+                {b.durationValue} {b.durationType}
+              </p>
+            </div>
+
+            {/* RIGHT */}
+            <div className="flex flex-col items-start sm:items-end gap-1">
+              <span
+                className={`text-xs px-2 py-1 rounded-full font-medium
+                  ${
+                    b.status === "completed"
+                      ? "bg-green-100 text-green-600"
+                      : b.status === "pending"
+                      ? "bg-yellow-100 text-yellow-600"
+                      : b.status === "ongoing"
+                      ? "bg-blue-100 text-blue-600"
+                      : b.status === "cancelled"
+                      ? "bg-gray-200 text-gray-600"
+                      : "bg-red-100 text-red-600"
+                  }`}
+              >
+                {b.status}
+              </span>
+
+              <p className="text-sm font-semibold text-green-600">
+                ₹{b.finalAmount || b.estimatedAmount}
+              </p>
+            </div>
+          </div>
+        ))}
+    </div>
+  )}
+</div>
     </div>
   );
 }
