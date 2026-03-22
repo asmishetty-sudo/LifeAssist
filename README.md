@@ -60,7 +60,7 @@ The platform is built with scalability and real-world usability in mind, support
 * Visual insights using charts & graphs
 * Track:
 
-  * Earnings (caregiver)
+  * Earnings/spendings 
   * Booking trends
   * Platform activity
 * Uses pie charts and graphs for clarity
