@@ -102,6 +102,9 @@ export default function CaregiverProfilePage() {
           <p>
             <strong>Gender:</strong> {caregiver.gender}
           </p>
+        <p>
+            <strong>GovID:</strong> {caregiver.govId}
+          </p>
           <p>
             <strong>Experience:</strong> {caregiver.experienceYears} years
           </p>
