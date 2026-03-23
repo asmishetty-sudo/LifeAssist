@@ -53,7 +53,7 @@ export default function Navbar() {
             ) : user ? (
               <div className="flex items-center gap-4">
                 <span className="font-medium text-green-300 hidden sm:block">{user.name}</span>
-               <NotificationBell/> 
+               {user.userType !== "admin" && <NotificationBell />} 
 
                 <button
                   onClick={handleLogout}
