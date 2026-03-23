@@ -20,7 +20,7 @@ export default function BookingModal({
   const [notes, setNotes] = useState("");
   const [durationType, setDurationType] = useState("days");
   const [durationValue, setDurationValue] = useState(1);
-
+  const [loading, setLoading] = useState(false);
 
   const filteredServices = useMemo(() => {
     if (!caregiver?.servicesOffered) return [];
@@ -134,7 +134,7 @@ export default function BookingModal({
 
   /* ---------------- BOOKING ---------------- */
 
-  const handleConfirmBooking = async () => {
+  const handleConfirmBooking = async () => {  
     if (
       !selectedPatient ||
       !selectedService ||
@@ -146,7 +146,7 @@ export default function BookingModal({
       toast.error("Please fill all required fields");
       return;
     }
-
+     setLoading(true);
     const bookingData = {
       caregiverId: caregiver._id,
       patientId: selectedPatient,
@@ -188,7 +188,9 @@ export default function BookingModal({
     } catch (error) {
       console.error(error);
       toast.error("Server error");
-    }
+    } finally {
+    setLoading(false); 
+  }
   };
 
   if (!caregiver) return null;
@@ -362,7 +364,7 @@ export default function BookingModal({
             onClick={handleConfirmBooking}
             className="bg-blue-600 hover:bg-blue-700 transition text-white px-5 py-2 rounded-xl shadow-md"
           >
-            Confirm Booking
+            {loading ? "Booking..." : "Confirm Booking"}
           </button>
         </div>
       </div>
