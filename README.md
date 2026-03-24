@@ -3,7 +3,7 @@
 ## 📌 Overview
 
 **LifeAssist** is a full-stack web application designed to connect families with professional caregivers in a simple, efficient, and secure way.
-It enables users to book caregiving services, communicate in real-time, and track activities through analytics — all in a clean, responsive interface.
+It enables users to book caregiving services, communicate in real-time, and track activities through analytics all in a clean, responsive interface.
 
 The platform is built with scalability and real-world usability in mind, supporting multiple user roles and real-time interactions.
 
